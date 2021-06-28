@@ -63,10 +63,13 @@
     &__list {
         position: absolute;
         top: 35%;
-        left: 40%;
+        left: 35%;
         transform: translateX(-59%, -50%);
         list-style: none;
         text-align: center;
+        @include respond(phone) {
+            left:20%;
+        }
       
     }
 
@@ -115,6 +118,7 @@
     &__icon {
         margin-top: 3.5rem;
         position: relative;
+        
         &,
         &::before,
         &::after {
@@ -122,12 +126,11 @@
             height: 2px;
             background-color: $color-grey-dark-3;
             display: inline-block;
-
         }
 
         &::before,
         &::after {
-            content:"";
+            content: "";
             position: absolute;
             left: 0;
             transition: all .2s;
@@ -136,8 +139,6 @@
         }
         &::before {
             top:-.8rem;
-        
-
         }
         &::after {
             top: 1rem;
@@ -156,13 +157,13 @@
 
     }
     &__checkbox:checked + &__button &__icon::before {
-        top: -1rem;
+        top: 0;
         transform: rotate(45deg);
         
         
     }
     &__checkbox:checked + &__button &__icon::after {
-        top: -1rem;
+        top: 0;
         transform: rotate(-45deg);
 
     }
